@@ -1,0 +1,70 @@
+.search-bar {
+  padding: 25px 15px;
+  background-image: url("../../images/book-shelves.jpg");
+  border-bottom: 1px solid rgb(131, 132, 133);
+}
+
+.search-bar__title {
+  margin-top: 0;
+  text-align: center;
+}
+
+.search-bar__form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.search-bar__container {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  border: 1px solid #000;
+}
+
+.search-bar__input {
+  width: 100%;
+  min-height: 30px;
+  border: none;
+}
+
+.search-bar__button {
+  border: none;
+  background-color: #fff;
+  background-image: url("../../images/search-svg.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  font-size: 0;
+  min-height: 32px;
+  width: 32px;
+  cursor: pointer;
+}
+
+.search-bar__option {
+  display: block;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.search-bar__option:nth-child(1) {
+  margin-bottom: 30px;
+}
+
+.search-bar__select {
+  min-height: 30px;
+}
+
+@media (min-width: 768px) {
+  .search-bar__options-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .search-bar__option:nth-child(1) {
+    margin-bottom: 0;
+  }
+}

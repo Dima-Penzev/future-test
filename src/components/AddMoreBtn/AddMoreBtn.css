@@ -1,0 +1,26 @@
+.add-more-btn {
+  padding-bottom: 100px;
+}
+
+.add-more-btn__element {
+  display: block;
+  color: rgb(234, 243, 240);
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #2f2f2f;
+  border: none;
+  min-height: 36px;
+  margin: 0 auto;
+  min-width: 200px;
+  transition: opacity 250ms ease-in;
+}
+
+.add-more-btn__element:hover,
+.add-more-btn__element:focus {
+  opacity: 0.7;
+}

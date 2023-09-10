@@ -1,0 +1,50 @@
+.book {
+  border-radius: 5px;
+  background-color: rgb(234, 243, 240);
+}
+
+.book__link {
+  text-decoration: none;
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.book__thumb {
+  flex-grow: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.book__cover {
+  display: block;
+  min-width: 128px;
+}
+
+.book__categorie {
+  margin-top: 0;
+  text-decoration: underline;
+  color: rgb(131, 132, 133);
+}
+
+.book__title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 0;
+  font-size: 18px;
+  color: #000;
+}
+
+.book__author {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: rgb(131, 132, 133);
+}
