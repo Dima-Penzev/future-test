@@ -11,6 +11,7 @@ function BookPage() {
   const [requredBook, setRequredBook] = useState({});
   const { bookId } = useParams();
   const { imageLinks, categories, description, title, authors } = requredBook;
+  const authorsString = authors && authors.join(" ");
 
   useEffect(() => {
     setStatus("pending");
@@ -45,7 +46,7 @@ function BookPage() {
           <div className="article__text-container">
             {categories && <p className="article__category">{categories}</p>}
             <h2 className="article__title">{title}</h2>
-            {authors && <p className="article__author">{authors}</p>}
+            <p className="article__author">{authorsString}</p>
             {description && <p className="article__text">{description}</p>}
           </div>
         </article>

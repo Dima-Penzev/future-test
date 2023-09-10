@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchBooks } from "../redux/operations";
 import * as actions from "../redux/actions";
+import { useState } from "react";
 
 function SearchBar({
   books,
@@ -13,6 +14,7 @@ function SearchBar({
   onAddSort,
   onClearBooksStore,
 }) {
+  const [warning, setWarning] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const { pathname } = location;
@@ -23,7 +25,8 @@ function SearchBar({
 
     switch (name) {
       case "book":
-        onAddQuery(value);
+        const normalizedQuery = value.trim();
+        onAddQuery(normalizedQuery);
         break;
 
       case "categories":
@@ -42,6 +45,11 @@ function SearchBar({
   function handleSubmit(e) {
     e.preventDefault();
 
+    if (dataQuery.bookQuery === "") {
+      setWarning(true);
+      return;
+    }
+
     if (Object.keys(books).length !== 0) {
       onClearBooksStore({});
     }
@@ -51,12 +59,16 @@ function SearchBar({
     }
 
     onSubmit(dataQuery);
+    setWarning(false);
   }
 
   return (
     <header className="search-bar">
       <h1 className="search-bar__title">Search for books</h1>
       <form className="search-bar__form" onSubmit={handleSubmit}>
+        <p className="search-bar__warning">
+          {warning && "You need to enter anything"}
+        </p>
         <div className="search-bar__container">
           <input
             className="search-bar__input"
@@ -64,7 +76,6 @@ function SearchBar({
             name="book"
             value={bookQuery}
             onChange={handleChange}
-            required
             placeholder="Book"
           />
           <button className="search-bar__button" type="submit" />
