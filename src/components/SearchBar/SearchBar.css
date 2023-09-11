@@ -53,6 +53,7 @@
 .search-bar__option {
   display: block;
   font-weight: bolder;
+  text-align: right;
   cursor: pointer;
 }
 
